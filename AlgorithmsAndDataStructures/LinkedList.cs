@@ -102,7 +102,7 @@ namespace LinkedList
             if (Count != 0)
             {
                 // Before:  Head -> 3 -> 5
-                // After:   Head -------> 5
+                // After:   Head ------> 5
 
                 // Head -> 3 -> null
                 // Head ------> null
