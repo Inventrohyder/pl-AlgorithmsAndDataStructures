@@ -1,12 +1,8 @@
-﻿using System;
+﻿using NodeChains;
+using System;
 
-namespace NodeChains
+namespace Calculator
 {
-    public class Node
-    {
-        public int Value { get; set; }
-        public Node Next { get; set; }
-    }
     class Program
     {
         static void Main(string[] args)

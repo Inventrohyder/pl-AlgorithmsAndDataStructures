@@ -1,14 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using DoublyLinkedList;
 
 namespace DuoublyLinkedList
 {
-	/// <summary>
-	/// A linked list collection capable of basic operations such as
-	/// Add, Remove, Find and Enumerate
-	/// </summary>
-	/// <typeparam name="T"></typeparam>
-	public class LinkedList<T> :
+    /// <summary>
+    /// A linked list collection capable of basic operations such as
+    /// Add, Remove, Find and Enumerate
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class LinkedList<T> :
 		System.Collections.Generic.ICollection<T>
 	{
 		/// <summary>
@@ -303,7 +303,7 @@ namespace DuoublyLinkedList
 		/// Enumerates over the linked list values from Head to Tail
 		/// </summary>
 		/// <returns>A head to Tail enumerator</returns>
-		public IEnumerator<T> GetEnumerator()
+		public System.Collections.Generic.IEnumerator<T> GetEnumerator()
 		{
 			LinkedListNode<T> current = Head;
 			while (current != null)
@@ -313,11 +313,11 @@ namespace DuoublyLinkedList
 			}
 		}
 
-		/// <summary>
-		/// Enumerates over the linked list values from Head to Tail
-		/// </summary>
-		/// <returns>A Head to Tail enumerator</returns>
-		IEnumerator IEnumerable.GetEnumerator()
+        /// <summary>
+        /// Enumerates over the linked list values from Head to Tail
+        /// </summary>
+        /// <returns>A Head to Tail enumerator</returns>
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		{
 			return ((System.Collections.Generic.IEnumerable<T>)this).GetEnumerator();
 		}
