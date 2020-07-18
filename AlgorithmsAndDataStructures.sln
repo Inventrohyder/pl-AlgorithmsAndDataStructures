@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack", "Stack\Stack.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue", "Queue\Queue.csproj", "{DBEA835D-3114-4EDF-8887-01CF74BB42D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTree", "BinaryTree\BinaryTree.csproj", "{91EDE53A-229C-48A9-A1D3-5F16005568C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,5 +29,9 @@ Global
 		{DBEA835D-3114-4EDF-8887-01CF74BB42D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBEA835D-3114-4EDF-8887-01CF74BB42D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBEA835D-3114-4EDF-8887-01CF74BB42D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91EDE53A-229C-48A9-A1D3-5F16005568C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91EDE53A-229C-48A9-A1D3-5F16005568C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91EDE53A-229C-48A9-A1D3-5F16005568C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91EDE53A-229C-48A9-A1D3-5F16005568C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
