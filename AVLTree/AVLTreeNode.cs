@@ -6,12 +6,44 @@ namespace AVLTree
     public class AVLTreeNode<TNode> : IComparable<TNode>
         where TNode : IComparable
     {
+        AVLTreeNode<TNode> _left;
+        AVLTreeNode<TNode> _right;
+
+
         public AVLTreeNode(TNode value, AVLTreeNode<TNode> parent, AVLTree<TNode> tree)
         {
         }
 
-        public AVLTreeNode<TNode> Left { get; private set; }
-        public AVLTreeNode<TNode> Right { get; private set; }
+        public AVLTreeNode<TNode> Left
+        {
+            get
+            {
+                return _left;
+            }
+            private set
+            {
+                _left = value;
+                if (_left != null)
+                {
+                    _left.Parent = this;
+                }
+            }
+        }
+        public AVLTreeNode<TNode> Right
+        {
+            get
+            {
+                return _right;
+            }
+            private set
+            {
+                _right = value;
+                if (_right != null)
+                {
+                    _right.Parent = this;
+                }
+            }
+        }
         public AVLTreeNode<TNode> Parent { get; private set; }
         public TNode value { get; private set; }
 
@@ -28,10 +60,52 @@ namespace AVLTree
         private void RightLeftRotation() { }
 
         // Support properties and methods
-        private int MaxChildHeight(AVLTreeNode<TNode> node) { }
-        private int LeftHeight { get; }
-        private int RightHeight { get; }
-        private TreeState State { get; }
-        private int BalanceFactor { get; }
+        private int MaxChildHeight(AVLTreeNode<TNode> node)
+        {
+            if (node != null)
+            {
+                return 1 + Math.Max(MaxChildHeight(node.Left), MaxChildHeight(node.Right));
+            }
+
+            return 0;
+        }
+        private int LeftHeight
+        {
+            get
+            {
+                return MaxChildHeight(Left);
+            }
+        }
+        private int RightHeight
+        {
+            get
+            {
+                return MaxChildHeight(Right);
+            }
+        }
+        private TreeState State
+        {
+            get
+            {
+                if (LeftHeight - RightHeight > 1)
+                {
+                    return TreeState.LeftHeavy;
+                }
+
+                if (RightHeight - LeftHeight > 1)
+                {
+                    return TreeState.RightHeavy;
+                }
+
+                return TreeState.Balanced;
+            }
+        }
+        private int BalanceFactor
+        {
+            get
+            {
+                return RightHeight - LeftHeight;
+            }
+        }
     }
 }
