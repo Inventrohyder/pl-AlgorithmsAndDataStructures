@@ -71,6 +71,20 @@ namespace Set
                 AddItemSkipDuplicates(item);
             }
         }
+        public Set<T> Intersection(Set<T> other)
+        {
+            Set<T> result = new Set<T>();
+
+            foreach (T item in _items)
+            {
+                if (other._items.Contains(item))
+                {
+                    result.Add(item);
+                }
+            }
+
+            return result;
+        }
         public Set<T> Difference(Set<T> other);
         public Set<T> SymmetricDifference(Set<T> other);
 
