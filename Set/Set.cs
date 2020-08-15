@@ -50,8 +50,27 @@ namespace Set
             }
         }
 
-        public Set<T> Union(Set<T> other);
-        public Set<T> Intersection(Set<T> other);
+        public Set<T> Union(Set<T> other)
+        {
+            Set<T> result = new Set<T>(_items);
+            result.AddRangeSkipDuplicates(other._items);
+
+            return result;
+        }
+        private void AddItemSkipDuplicates(T item)
+        {
+            if (!Contains(item))
+            {
+                _items.Add(item);
+            }
+        }
+        private void AddRangeSkipDuplicates(List<T> items)
+        {
+            foreach (T item in items)
+            {
+                AddItemSkipDuplicates(item);
+            }
+        }
         public Set<T> Difference(Set<T> other);
         public Set<T> SymmetricDifference(Set<T> other);
 
