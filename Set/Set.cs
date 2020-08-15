@@ -85,7 +85,17 @@ namespace Set
 
             return result;
         }
-        public Set<T> Difference(Set<T> other);
+        public Set<T> Difference(Set<T> other)
+        {
+            Set<T> result = new Set<T>(_items);
+
+            foreach (T item in other._items)
+            {
+                result.Remove(item);
+            }
+
+            return result;
+        }
         public Set<T> SymmetricDifference(Set<T> other);
 
         public IEnumerator<T> GetEnumerator()
