@@ -53,7 +53,31 @@ namespace AVLTree
         }
 
         // Balancing Methods
-        internal void Balance() { }
+        internal void Balance()
+        {
+            if (State == TreeState.RightHeavy)
+            {
+                if (Right != null && Right.BalanceFactor < 0)
+                {
+                    LeftRightRotation();
+                }
+                else
+                {
+                    LeftRotation();
+                }
+            }
+            else if (State == TreeState.LeftHeavy)
+            {
+                if (Left != null && Left.BalanceFactor > 0)
+                {
+                    RightLeftRotation();
+                }
+                else
+                {
+                    RightRotation();
+                }
+            }
+        }
         private void LeftRotation() { }
         private void RightRotation() { }
         private void LeftRightRotation() { }
