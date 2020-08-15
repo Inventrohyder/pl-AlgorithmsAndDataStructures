@@ -96,7 +96,13 @@ namespace Set
 
             return result;
         }
-        public Set<T> SymmetricDifference(Set<T> other);
+        public Set<T> SymmetricDifference(Set<T> other)
+        {
+            Set<T> intersection = Intersection(other);
+            Set<T> union = Union(other);
+
+            return union.Difference(intersection);
+        }
 
         public IEnumerator<T> GetEnumerator()
         {
