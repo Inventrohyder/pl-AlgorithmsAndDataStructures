@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>ads2_m5_sets</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ads2-set-demo\obj\Debug\netcoreapp3.1\ads2-set-demo.AssemblyInfo.cs" />
+  </ItemGroup>
+</Project>
